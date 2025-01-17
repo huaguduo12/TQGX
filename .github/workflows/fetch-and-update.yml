@@ -26,6 +26,7 @@ jobs:
       run: pip install requests PyGithub
 
     - name: Run script
-      env:
-       MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 使用你自定义的 token
+  env:
+    MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 使用你自定义的 token
   run: python script.py
+
