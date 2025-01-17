@@ -7,7 +7,7 @@ REPO_NAME = "huaguduo12/ceshi"  # 替换为你的存储库名称
 FILE_PATH = "ADD.txt"  # 替换为文件路径（如 data.txt）
 
 # 要读取的网页
-WEBPAGE_URL = "https://example.com"  # 替换为目标网页 URL
+WEBPAGE_URL = "https://tqyb.jzhou9096.workers.dev"  # 替换为目标网页 URL
 
 def fetch_webpage_content(url):
     try:
