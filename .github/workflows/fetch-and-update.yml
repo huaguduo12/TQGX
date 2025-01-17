@@ -27,5 +27,5 @@ jobs:
 
     - name: Run script
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: python script.py
+       MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 使用你自定义的 token
+  run: python script.py
