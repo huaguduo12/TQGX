@@ -8,9 +8,9 @@ if GITHUB_TOKEN is None:
     print("Error: MY_GITHUB_TOKEN is not set.")
     exit(1)
 
-REPO_NAME = "huaguduo12/ceshi"  # 替换为你的仓库
-FILE_PATH = "ADD.txt"  # 替换为文件路径（如 data.txt）
-WEBPAGE_URL = "https://tqyb.jzhou9096.workers.dev"  # 替换为目标网页 URL
+REPO_NAME = "huaguduo12/SKipi"  # 替换为你的仓库
+FILE_PATH = "sttvapi.txt"  # 替换为文件路径（如 data.txt）
+WEBPAGE_URL = "https://tiquip.huaguduo34.workers.dev/"  # 替换为目标网页 URL
 
 def fetch_webpage_content(url):
     import requests
