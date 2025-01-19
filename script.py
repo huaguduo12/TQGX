@@ -10,7 +10,7 @@ if GITHUB_TOKEN is None:
 
 REPO_NAME = "huaguduo12/SKipi"  # 替换为你的仓库
 FILE_PATH = "sttvapi.txt"  # 替换为文件路径（如 data.txt）
-WEBPAGE_URL = "https://tiquip.huaguduo34.workers.dev/"  # 替换为目标网页 URL
+WEBPAGE_URL = "https://tiquip.huaguduo34.workers.dev"  # 替换为目标网页 URL
 
 def fetch_webpage_content(url):
     import requests
