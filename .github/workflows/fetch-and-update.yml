@@ -2,7 +2,7 @@ name: Fetch and Update Web Content
 
 on:
   schedule:
-    - cron: "2 23 * * *"  # 北京时间 7:02
+  - cron: "2 23 * * *"  # 北京时间 7:02
   - cron: "2 4 * * *"   # 北京时间 12:02
   - cron: "2 8 * * *"   # 北京时间 16:02
   - cron: "2 11 * * *"  # 北京时间 19:02
