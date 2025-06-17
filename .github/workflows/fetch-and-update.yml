@@ -17,22 +17,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: 检出代码仓库
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # Step 1: 检出代码仓库
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    # Step 2: 设置 Python 环境
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.x"
+      # Step 2: 设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
 
-    # Step 3: 安装依赖
-    - name: Install dependencies
-      run: pip install requests PyGithub
+      # Step 3: 安装依赖
+      - name: Install dependencies
+        run: pip install requests PyGithub
 
-    # Step 4: 运行 Python 脚本
-    - name: Run script
-      env:
-        MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}  # 使用自定义的 Token
-      run: python script.py
+      # Step 4: 运行 Python 脚本
+      - name: Run script
+        env:
+          MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          REPO_NAME: ${{ secrets.REPO_NAME }}
+          FILE_PATH: ${{ secrets.FILE_PATH }}
+          WEBPAGE_URL: ${{ secrets.WEBPAGE_URL }}
+        run: |
+          echo "DEBUG: REPO_NAME=${REPO_NAME}"
+          echo "DEBUG: FILE_PATH=${FILE_PATH}"
+          echo "DEBUG: WEBPAGE_URL=${WEBPAGE_URL}"
+          python script.py
