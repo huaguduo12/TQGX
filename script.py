@@ -2,15 +2,25 @@ import os
 from github import Github
 
 # 获取 GitHub Token（使用自定义 secret）
-GITHUB_TOKEN = os.getenv("MY_GITHUB_TOKEN")  # 获取环境变量
-
-if GITHUB_TOKEN is None:
+GITHUB_TOKEN = os.getenv("MY_GITHUB_TOKEN")
+if not GITHUB_TOKEN:
     print("Error: MY_GITHUB_TOKEN is not set.")
     exit(1)
 
-REPO_NAME = "huaguduo12/SKipi"  # 替换为你的仓库
-FILE_PATH = "sttvapi.txt"  # 替换为文件路径（如 data.txt）
-WEBPAGE_URL = "https://tiquip.huaguduo34.workers.dev"  # 替换为目标网页 URL
+# 从环境变量获取，未设置则直接报错
+REPO_NAME = os.getenv("REPO_NAME")
+FILE_PATH = os.getenv("FILE_PATH")
+WEBPAGE_URL = os.getenv("WEBPAGE_URL")
+
+# 调试输出
+print(f"DEBUG: REPO_NAME={REPO_NAME}")
+print(f"DEBUG: FILE_PATH={FILE_PATH}")
+print(f"DEBUG: WEBPAGE_URL={WEBPAGE_URL}")
+
+if not REPO_NAME or not FILE_PATH or not WEBPAGE_URL:
+    print("Error: One or more required environment variables (REPO_NAME, FILE_PATH, WEBPAGE_URL) are not set.")
+    exit(1)
+
 def fetch_webpage_content(url):
     import requests
     try:
